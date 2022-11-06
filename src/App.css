@@ -1,38 +1,176 @@
-.App {
-  text-align: center;
+*, *::after, *::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --mailcolor: #fdbd96;
+  --mailcolorone:#FFB88C;
+  --mailcolortwo: #f7b085;
+  --cardbg: #eaeced;
+  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+html, body {
+  height: 100%;
+  margin: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.MainApp{
+  background-color: rgb(254, 254, 254);
+  height: 100%;
+  background-image: url("https://www.talkroom.com/img/bg-img.png");
+  /* background: url("./images/screwbg.jpg"); */
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  
+  /* background-image: url("./images/blacksand.jpg"); */
+  /* filter: blur(3px); 
+   -webkit-filter: blur(5px);  */
+}
+.GitLogo{
+  width: 30px;
+  margin: 20px;
+}
+
+
+
+
+.main{
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  height: 100vh;
+  
+ 
+  
+ 
+}
+.mail
+{
+
+  width: 400px;
+  height: 300px;
+  position: relative;
+  background: #1f4037;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #01180e, #1f4037);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #d2ced3, rgb(243, 212, 234)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  border-radius: 0px 0px 20px 20px;
+  transform-style: preserve-3d;
+  perspective: 700px;
+  cursor: pointer;
+  box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
+}
+.mail:before
+{
+  content: '';
+  position: absolute;
+  border-left: 200px solid transparent;
+  border-right: 200px solid var(--mailcolortwo);
+  border-top: 150px solid transparent;
+  border-bottom: 150px solid var(--mailcolortwo);
+  border-radius: 0px 0px 20px 20px;
+  z-index: 5;
+
+}
+.mail:after
+{
+  content: '';
+  position: absolute;
+  border-left: 200px solid var(--mailcolorone);
+  border-right: 200px solid transparent;
+  border-top: 150px solid transparent;
+  border-bottom: 150px solid var(--mailcolorone);
+  border-radius: 0px 0px 20px 20px;
+
+}
+.mail .cover
+{
+  position: absolute;
+  border-left: 200px solid transparent;
+  border-right: 200px solid transparent;
+  border-top: 150px solid var(--mailcolor);
+  /* border-image: linear-gradient(to right, #99f2c8, #1f4037); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* border-image-slice: 1; */
+  border-bottom: 150px solid transparent;
+  transform-origin: top;
+  transition:1s 1s ease;
+  z-index: 4;
+}
+.mail:hover .cover
+{
+  transform: rotateX(180deg);
+  transition: 1s ease; 
+}
+.mail .image
+{
+  position: absolute;
+  width:380px;
+  left: 10px;
+  height: 290px;
+  top: 10px;
+  background-image: url('./images/blacksand.jpg');
+  background-color: var(--cardbg);
+  border-radius: 0px 0px 20px 20px;
+  /* background-image: url("images/image.jpg"); */
+  background-size: cover;
+  background-position: center center;
+  transition: 1s ease; 
+  box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.2);
+}
+.mail:hover .image
+{
+  top: -140px;
+  transition: 1s 1s ease; 
+}
+
+.avatar{
+  width:6rem;
+  border-radius: 50%;
+  margin-left: 40%;
+  padding-top: 20px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.gitName{
+margin-left: 54px;
+font-size: 25px;
+color: white;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.repos{
+  margin-left: 70px;
+  color: white;
+
 }
+
+.image{
+  display: flex;
+  justify-content: center;
+}
+
+/* .parent-image {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.bg-logo {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border: 1px solid #000000;
+}
+
+.avatar {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  
+  border: 1px solid #000000;
+} */
