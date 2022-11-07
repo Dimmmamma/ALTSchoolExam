@@ -12,6 +12,8 @@ const Repos = () => {
     const [repositories, setRepositories] = useState ('');
 
     useEffect(() => {
+    try {
+        
         fetch(`https://api.github.com/users/dimmmamma/repos?per_page=5&page=${page}`).then((response) => {
             return response.json()
         }).then(result => {
@@ -20,6 +22,10 @@ const Repos = () => {
         .then(data => {
             setData(data);
           });
+        
+    } catch (error) {
+        console.log(error);
+    }
     }, [page]
     
        

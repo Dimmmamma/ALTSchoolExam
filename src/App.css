@@ -174,3 +174,142 @@ color: white;
   
   border: 1px solid #000000;
 } */
+
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 600px) {
+  .mail {
+    margin-bottom: 150px;
+    width: 240px;
+    height: 175px;
+    position: relative;
+    background: #1f4037; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #01180e,
+      #1f4037
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #d2ced3,
+      rgb(243, 212, 234)
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    border-radius: 0px 0px 20px 20px;
+    transform-style: preserve-3d;
+    perspective: 700px;
+    cursor: pointer;
+    box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
+  }
+  .mail:before {
+    content: "";
+    position: absolute;
+    border-left: 120px solid transparent;
+    border-right: 120px solid var(--mailcolortwo);
+    border-top: 75px solid transparent;
+    border-bottom: 100px solid var(--mailcolortwo);
+    border-radius: 0px 0px 20px 20px;
+    z-index: 5;
+  }
+  .mail:after {
+    content: "";
+    position: absolute;
+    border-left: 120px solid var(--mailcolorone);
+    border-right: 120px solid transparent;
+    border-top: 75px solid transparent;
+    border-bottom: 100px solid var(--mailcolorone);
+    border-radius: 0px 0px 20px 20px;
+  }
+  .mail .cover {
+    position: absolute;
+    border-left: 120px solid transparent;
+    border-right: 120px solid transparent;
+    border-top: 75px solid var(--mailcolor);
+    /* border-image: linear-gradient(to right, #99f2c8, #1f4037); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /* border-image-slice: 1; */
+    border-bottom: 100px solid transparent;
+    transform-origin: top;
+    transition: 1s 1s ease;
+    z-index: 4;
+  }
+  .mail:hover .cover {
+    transform: rotateX(180deg);
+    transition: 1s ease;
+  }
+
+  .mail .image {
+    position: absolute;
+    width: 230px;
+    left: 6px;
+    height: 165px;
+    top: 5.5px;
+    background-image: url("./images/blacksand.jpg");
+    background-color: black;
+    border-radius: 0px 0px 20px 20px;
+    /* background-image: url("images/image.jpg"); */
+    background-size: cover;
+    background-position: center center;
+    transition: 1s ease;
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+  }
+  .mail:hover .image {
+    top: -90px;
+    transition: 1s 1s ease;
+  }
+
+  .avatar {
+    width: 3.5rem;
+    border-radius: 50%;
+    margin-left: 55%;
+    padding-top: 30px;
+    color: white;
+  }
+
+  .gitName {
+    position: relative;
+    left: 17px;
+    margin-left: 30px;
+    font-size: 15px;
+    color: white;
+  }
+
+  /* .repos{
+  margin-left: 70px;
+  color: white;
+
+} */
+
+  .image {
+    display: flex;
+    justify-content: center;
+  }
+
+  .repoclass {
+    color: cornsilk;
+    font-size: 10px;
+    position: relative;
+    left: 80px;
+    padding-top: 5px;
+  }
+
+  /* .gitprofilelink {
+    color: cornsilk;
+    font-size: 12px;
+  } */
+
+  .cardtwo {
+    color: rgba(0, 0, 10, 0.3);
+    font-size: 10px;
+    line-height: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .followers,
+  .following {
+    border-radius: 5px;
+    margin-top: 2px;
+    padding: 2px;
+    background-color: peachpuff;
+  }
+}

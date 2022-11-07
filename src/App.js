@@ -16,7 +16,7 @@ function App() {
       
         <Routes>
           <Route path= "/" component={Home}  />
-          <Route path= "/Repos" component={Repos} />
+          <Route path= "/Repos" component={Repos} exact />
         </Routes>
       
       
