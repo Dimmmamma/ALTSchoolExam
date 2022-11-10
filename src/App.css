@@ -4,11 +4,24 @@
   box-sizing: border-box;
 }
 
+/* FONT FAMILY */
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+
+/* VARIABLES */
 :root {
-  --mailcolor: #fdbd96;
-  --mailcolorone:#FFB88C;
-  --mailcolortwo: #f7b085;
-  --cardbg: #eaeced;
+  --mailcolor: #121212;
+  --mailcolorone:#0c0c0c;
+  --mailcolortwo: #070707;
+  --cardbg: linear-gradient(to left, #8e2de2, rgba(74, 0, 224, 0.9));
+  --circlebg: linear-gradient(to left, #abbaab, #ffffff);
+  --firstfont: 'Be Vietnam Pro', sans-serif;
+  --secondfont: 'Alegreya Sans SC', sans-serif;
+  --handwritingfont: 'Nanum Pen Script', cursive;
+  /* #A9ACB9; */
+  /* #DBD0DA */
   
 }
 
@@ -18,9 +31,9 @@ html, body {
 }
 
 .MainApp{
-  background-color: rgb(254, 254, 254);
+  background-color: rgb(172, 172, 172);
   height: 100%;
-  background-image: url("https://www.talkroom.com/img/bg-img.png");
+  background-image: url('./images/blacksand.jpg');
   /* background: url("./images/screwbg.jpg"); */
   background-repeat: no-repeat;
   background-position: 50%;
@@ -31,74 +44,93 @@ html, body {
    -webkit-filter: blur(5px);  */
 }
 .GitLogo{
-  width: 30px;
-  margin: 20px;
+  width: 45px;
+  margin: 30px;
 }
 
+.NavBar{
+  color: #5D86B9;
+  display: flex;
+  /* border: 1px solid rgb(140, 64, 64); */
+  justify-content:space-between;
+}
 
+.Error-test{
+  margin: 3.4% 0% 0% 58%;
+  font-family: var(--firstfont);
+}
 
+.Contact{
+  margin: 3.4% 5% 0% 0%;
+  font-family: var(--firstfont);
+}
 
 .main{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  
- 
-  
+  height: 90vh;
  
 }
+
+
+
 .mail
 {
 
-  width: 400px;
-  height: 300px;
+  width: 420px;
+  height: 310px;
   position: relative;
-  background: #1f4037;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #01180e, #1f4037);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #d2ced3, rgb(243, 212, 234)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #171919;  
+  /* background: -webkit-linear-gradient(to right, #01180e, #1f4037);  Chrome 10-25, Safari 5.1-6 */
+  /* background: linear-gradient(to right, #d2ced3, rgb(243, 212, 234)); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   border-radius: 0px 0px 20px 20px;
   transform-style: preserve-3d;
   perspective: 700px;
   cursor: pointer;
-  box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
+  
+  
+  /* box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px; */
 }
 .mail:before
 {
   content: '';
   position: absolute;
-  border-left: 200px solid transparent;
-  border-right: 200px solid var(--mailcolortwo);
-  border-top: 150px solid transparent;
-  border-bottom: 150px solid var(--mailcolortwo);
+  border-left: 210px solid transparent;
+  border-right: 210px solid var(--mailcolortwo);
+  border-top: 160px solid transparent;
+  border-bottom: 160px solid var(--mailcolortwo);
   border-radius: 0px 0px 20px 20px;
   z-index: 5;
+  box-shadow: inset 0 0 50px #000000;
 
 }
 .mail:after
 {
   content: '';
   position: absolute;
-  border-left: 200px solid var(--mailcolorone);
-  border-right: 200px solid transparent;
-  border-top: 150px solid transparent;
-  border-bottom: 150px solid var(--mailcolorone);
+  border-left: 210px solid var(--mailcolorone);
+  border-right: 210px solid transparent;
+  border-top: 160px solid transparent;
+  border-bottom: 160px solid var(--mailcolorone);
   border-radius: 0px 0px 20px 20px;
+  box-shadow: inset 0 0 50px #000000;
 
 }
 .mail .cover
 {
   position: absolute;
-  border-left: 200px solid transparent;
-  border-right: 200px solid transparent;
-  border-top: 150px solid var(--mailcolor);
+  border-left: 210px solid transparent;
+  border-right: 210px solid transparent;
+  border-top: 160px solid var(--mailcolor);
   /* border-image: linear-gradient(to right, #99f2c8, #1f4037); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   /* border-image-slice: 1; */
-  border-bottom: 150px solid transparent;
+  border-bottom: 160px solid transparent;
   transform-origin: top;
   transition:1s 1s ease;
   z-index: 4;
+  box-shadow: inset 0 0 50px #000000;
 }
 .mail:hover .cover
 {
@@ -108,50 +140,181 @@ html, body {
 .mail .image
 {
   position: absolute;
-  width:380px;
+  width:400px;
   left: 10px;
-  height: 290px;
+  height: 310px;
   top: 10px;
-  background-image: url('./images/blacksand.jpg');
-  background-color: var(--cardbg);
+  /* background-image: url(''); */
+  background: var(--cardbg);
   border-radius: 0px 0px 20px 20px;
   /* background-image: url("images/image.jpg"); */
   background-size: cover;
   background-position: center center;
   transition: 1s ease; 
-  box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.2);
+  box-shadow: 2px 2px 50px 10px rgba(0,0,0,0.2);
+  /* box-shadow: inset 0 0 20px #000000; */
 }
 .mail:hover .image
 {
-  top: -140px;
+  top: -150px;
   transition: 1s 1s ease; 
 }
 
 .avatar{
   width:6rem;
   border-radius: 50%;
-  margin-left: 40%;
-  padding-top: 20px;
+  margin-left: 38.5%;
+  padding-top: 24px;
   color: white;
 }
 
-.gitName{
+/* .gitName{
 margin-left: 54px;
 font-size: 25px;
 color: white;
 
+} */
+
+.gitName {
+  position: relative;
+  left: 5rem;
+  /* margin-left: 30px; */
+  font-size: 25px;
+  color: white;
+  margin-top: 2px;
+  font-family: var(--firstfont);
+}
+.para1{
+  font-size: 10px; 
+  font-family: var(--firstfont);
+  font-weight: 100;
+  line-height: 12px;
+  color: #eae3a5;
+  /* background-color: #01180e; */
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  text-align: center;
+  margin-bottom: 5px;
+  font-style: italic;
+  /* width: 22rem; */
+  
+ 
 }
 
 .repos{
+  /* border: 1px solid black; */
+  width: 8.2rem;
+  height: 2rem;
+  position: relative;
+  background: var(--cardbg);
+  color: white;
+  margin-top: 1rem;
+  border-radius: 6px;
+  position: relative;
+  top: 22px;
+  left: 8.5rem;
+  font-family: var(--secondfont);
+  padding: 4px;
+  box-shadow:  rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
+  font-size: 12px;
+  letter-spacing: 0.7px;
+}
+
+.repos:hover, .repos:focus{
+  background-color: white;
+}
+/* .repos{
+margin-left: 70px;
+color: white;
+
+} */
+
+
+/* .repoclass {
+  color: cornsilk;
+  font-size: 15px;
+  position: relative;
+  left: 80px;
+  padding-top: 5px;
+} */
+
+/* .gitprofilelink {
+  color: cornsilk;
+  font-size: 12px;
+} */
+
+.cardtwo {
+  color: rgb(11, 7, 21);
+  font-size: 14px;
+  line-height: 1rem;
+  /* margin-bottom: 25rem; */
+  display: flex;
+  /* border: 1px solid black; */
+  justify-content: space-around;
+  /* margin-top: 5px; */
+  position: relative;
+  bottom: 35px;
+  font-family: var(--firstfont);
+
+}
+
+.TopFollowers, .TopFollowing {
+  margin-top: 2px;
+  /* padding: 3px 3px 5px 12px; */
+  padding-left: 5.3px;
+  padding-top: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: relative;
+  left: 1rem;
+
+  background: var(--circlebg);
+  color: black;
+  font-family: var(--handwritingfont);
+  font-size: 20px;
+  box-shadow:  rgba(100, 100, 111, 0.3) 0px 7px 29px 15px;
+}
+
+.followers{
+  position: relative;
+  left: 4.3rem;
+}
+
+.following{
+  position: relative;
+  right: 3.8rem;
+
+}
+
+.BottomFollowing{
+  position: relative;
+  bottom: 18px;
+  left: 40px;
+  font-family: var(--secondfont);
+  font-weight: 700;
+  
+}
+
+.BottomFollowers{
+  position: relative;
+  bottom: 18px;
+  right: 49px;
+  font-family: var(--secondfont);
+  font-weight: 700;
+
+}
+
+/* .repos{
   margin-left: 70px;
   color: white;
 
-}
+} */
 
-.image{
+/* .image{
   display: flex;
   justify-content: center;
-}
+} */
 
 /* .parent-image {
   position: relative;
@@ -244,8 +407,8 @@ color: white;
     left: 6px;
     height: 165px;
     top: 5.5px;
-    background-image: url("./images/blacksand.jpg");
-    background-color: black;
+    /* background-image: url("./images/blacksand.jpg"); */
+    /* background-color: black; */
     border-radius: 0px 0px 20px 20px;
     /* background-image: url("images/image.jpg"); */
     background-size: cover;
@@ -258,58 +421,148 @@ color: white;
     transition: 1s 1s ease;
   }
 
-  .avatar {
-    width: 3.5rem;
+
+  .GitLogo{
+    width: 20px;
+    margin: 20px;
+  }
+  
+  
+  .Error-test{
+    margin: 3.4% 0% 0% 22%;
+    font-family: var(--firstfont);
+    font-size: 8px;
+  }
+  
+  .Contact{
+    margin: 3.4% 6% 0% 0%;
+    font-family: var(--firstfont);
+    font-size: 8px;
+  }
+  
+  .avatar{
+    width:3.5rem;
     border-radius: 50%;
-    margin-left: 55%;
-    padding-top: 30px;
+    margin-left: 38.5%;
+    padding-top: 20px;
     color: white;
   }
-
+  
+  
   .gitName {
     position: relative;
-    left: 17px;
-    margin-left: 30px;
+    left: 2.35rem;
+    bottom: 0.3rem;
     font-size: 15px;
-    color: white;
+    font-family: var(--firstfont);
   }
-
-  /* .repos{
-  margin-left: 70px;
-  color: white;
-
-} */
-
-  .image {
-    display: flex;
-    justify-content: center;
-  }
-
-  .repoclass {
-    color: cornsilk;
-    font-size: 10px;
+  .para1{
+    font-size: 5.5px; 
+    line-height: 6px;
     position: relative;
-    left: 80px;
-    padding-top: 5px;
+    bottom: 6px;
+    }
+  
+  .repos{
+    width: 4.5rem;
+    height: 1rem;
+    position: relative;
+    background: var(--cardbg);
+    color: white;
+    margin-top: 1rem;
+    border-radius: 6px;
+    position: relative;
+    top: -5px;
+    left: 5rem;
+    font-family: var(--firstfont);
+    padding: 3px;
+    box-shadow:  rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
+    font-size: 6px;
   }
-
-  /* .gitprofilelink {
-    color: cornsilk;
-    font-size: 12px;
-  } */
-
+  
+  .repos:hover, .repos:focus{
+    background-color: white;
+  }
+ 
+  
   .cardtwo {
     color: rgba(0, 0, 10, 0.3);
-    font-size: 10px;
+    font-size: 9px;
     line-height: 1rem;
-    margin-top: 0.5rem;
+    /* margin-bottom: 25rem; */
+    display: flex;
+    /* border: 1px solid black; */
+    justify-content: space-around;
+    /* margin-top: 5px; */
+    position: relative;
+    bottom: 47px;
+    font-family: var(--firstfont);
+  
+  }
+  
+  .TopFollowers, .TopFollowing {
+    margin-top: 10px;
+    /* padding: 3px 3px 5px 12px; */
+    padding-left: 1.5px;
+    padding-bottom: 12px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    position: relative;
+    left: 1rem;
+  
+    background: var(--circlebg);
+    color: black;
+    font-family: var(--handwritingfont);
+    font-size: 18px;
+    box-shadow:  rgba(100, 100, 111, 0.3) 0px 7px 29px 15px;
+  }
+  
+  .followers{
+    position: relative;
+    left: 2.5rem;
+  }
+  
+  .following{
+    position: relative;
+    right: 2.5rem;
+  
+  }
+  
+  .BottomFollowing{
+    position: relative;
+    /* bottom: px; */
+    left: 32px;
+    font-family: var(--secondfont);
+    font-weight: 700;
+    
+  }
+  
+  .BottomFollowers{
+    position: relative;
+    /* bottom: px; */
+    right: 29px;
+    font-family: var(--secondfont);
+    font-weight: 700;
+  
   }
 
-  .followers,
-  .following {
-    border-radius: 5px;
-    margin-top: 2px;
-    padding: 2px;
-    background-color: peachpuff;
-  }
+
+ 
+
+
+
+ 
+
+ 
+
+  
+}
+
+
+
+/* PAGINATION STYLE */
+.pagination-style{
+  display: flex;
+  
 }

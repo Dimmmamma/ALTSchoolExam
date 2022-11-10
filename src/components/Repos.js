@@ -12,20 +12,19 @@ const Repos = () => {
     const [repositories, setRepositories] = useState ('');
 
     useEffect(() => {
-    try {
-        
+    
         fetch(`https://api.github.com/users/dimmmamma/repos?per_page=5&page=${page}`).then((response) => {
             return response.json()
         }).then(result => {
-            setUsers(result.results)
+            setUsers(result)
+        }).catch (error => {
+            console.log(error);
         })
-        .then(data => {
-            setData(data);
-          });
+        // .then(data => {
+        //   setData(data);
+        // });
         
-    } catch (error) {
-        console.log(error);
-    }
+    
     }, [page]
     
        
@@ -56,9 +55,14 @@ const Repos = () => {
     }
 
 
-    return (<><div><ul>{users.map(user => <li key={user.email}>{user.name.title} {user.name.first} {user.name.last}</li>)}</ul>
-     <button className='previous'onClick={previousPage}>Previous</button>
-     <button className="Next" onClick={nextPage}>Next Page</button>
+    return (<>
+    <div>
+        <ul>{users.length && users.map(user => 
+          <li className="pagination-style" key={user.id}>{user.full_name} {user.avatar_url} {user.repos_url}
+          </li>)}
+        </ul>
+       <button className='previous'onClick={previousPage}>Previous</button>
+       <button className="Next" onClick={nextPage}>Next Page</button>
     </div></>)
 }
 

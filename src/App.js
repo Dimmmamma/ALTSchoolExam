@@ -10,13 +10,13 @@ import ErrorBoundary from './components/ErrorBoundary';
 function App() {
   return (
     <BrowserRouter>
-      <div className='Oga'>
+      {/* <div className='Oga'>
         <Home />
-      </div>
+      </div> */}
       
         <Routes>
-          <Route path= "/" component={Home}  />
-          <Route path= "/Repos" component={Repos} exact />
+          <Route path= "/" element={<Home />}  />
+          <Route path= "/Repos" element={<Repos />} exact />
         </Routes>
       
       

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useState, useEffect } from 'react';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import '../App.css';
-import GitLogo from '../images/GitHub-Mark-120px-plus.png';
+import GitLogo from '../images/GitHub-Mark-Light-120px-plus.png';
 import Repos from './Repos';
 import ErrorBoundary from './ErrorBoundary';
 
@@ -40,6 +40,8 @@ function App() {
     <div className='MainApp'>
       <div className="NavBar">
         <img src={GitLogo} alt="GitLogo" className='GitLogo'/>
+        <div className='Error-test'>ErrorBoundary Test</div>
+        <div className='Contact'>Contact Page</div>
       </div>
 
       <div className="main">
@@ -52,14 +54,23 @@ function App() {
               <img src={avatar} alt="Git Avatar" className='avatar'/>
               </div>
               <h1 className='gitName'>{name}</h1>
+
+              <p className='para1'> "...@{userName} is a Frontend Developer curious about the intersection of Tech and Pharmacology given her background as a Pharmacology major." 
+              </p>
               
-                Click to see her {repositories} repositories.
+              <button className='repos'>VIEW REPOSITORIES</button>
               
-              <p className='gitProfileLink'>Follow me @ <a href='https://github.com/Dimmmamma'>{userName}</a></p>
+              {/* <p className='gitProfileLink'>Follow me @ <a href='https://github.com/Dimmmamma'>{userName}</a></p> */}
             </div> 
             <div className='cardtwo'>
-              <div className='followers'>{followers}followers</div>
-              <div className='following'>{following}following</div>
+                <div className='followers'>
+                 <p className='TopFollowers'>{followers}</p>
+                 <p className='BottomFollowers'>followers</p>
+                </div>
+                <div className='following'>
+                 <p className='TopFollowing'>{following}</p>
+                 <p className='BottomFollowing'>following</p>
+                </div>
             </div>         
           </div>
 		    </div>
