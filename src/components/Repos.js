@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import '../App.css';
+import '../style.css';
 
 const Repos = () => {
     const [users, setUsers] = useState ([]);

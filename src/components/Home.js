@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useState, useEffect } from 'react';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import '../App.css';
+import '../style.css';
 import GitLogo from '../images/GitHub-Mark-Light-120px-plus.png';
 import Repos from './Repos';
 import ErrorBoundary from './ErrorBoundary';
@@ -45,8 +45,8 @@ function App() {
       </div>
 
       <div className="main">
-		    <div className="mail">
-			    <div className="cover"> </div>
+		    {/* <div className="mail"> */}
+			    {/* <div className="cover"> </div> */}
 			    <div className="image"> 
             <div className='gitAvatar'>
               <div className='parent-image'>
@@ -72,7 +72,7 @@ function App() {
                  <p className='BottomFollowing'>following</p>
                 </div>
             </div>         
-          </div>
+          {/* </div> */}
 		    </div>
 	    </div>
     </div>

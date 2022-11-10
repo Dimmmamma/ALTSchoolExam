@@ -58,11 +58,21 @@ html, body {
 .Error-test{
   margin: 3.4% 0% 0% 58%;
   font-family: var(--firstfont);
+  height: 1.5rem;
+  width: 9.5rem;
 }
 
 .Contact{
   margin: 3.4% 5% 0% 0%;
   font-family: var(--firstfont);
+  height: 1.5rem;
+  width: 7rem;
+}
+
+.Error-test:hover, .Contact:hover{
+  /* background: var(--circlebg); */
+  border-bottom: 3px solid;
+  cursor:pointer;
 }
 
 .main{
@@ -429,15 +439,20 @@ color: white;
   
   
   .Error-test{
-    margin: 3.4% 0% 0% 22%;
+    margin: 7.4% 0% 0% 22%;
     font-family: var(--firstfont);
     font-size: 8px;
+    width: 4.8rem;
+    height:1rem;
+    
   }
   
   .Contact{
-    margin: 3.4% 6% 0% 0%;
+    margin: 7.4% 6% 0% 0%;
     font-family: var(--firstfont);
     font-size: 8px;
+    width: 3.6rem;
+    height:1rem;
   }
   
   .avatar{
