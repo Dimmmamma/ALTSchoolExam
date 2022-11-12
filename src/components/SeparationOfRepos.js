@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import '../style.css';
-import { Link } from 'react-router-dom';
+import { Routes, Route, BrowserRouter, Link } from 'react-router-dom';
 import GitLogo from '../images/GitHub-Mark-Light-120px-plus.png';
 
 
 
-const Repos = () => {
+const SeparationOfRepos = () => {
     const [users, setUsers] = useState ([]);
     const [page, setPage] = useState(1);
-  
+   
 
     useEffect(() => {
     
@@ -29,7 +29,7 @@ const Repos = () => {
        
     );
 
-
+ 
 
  
     function nextPage() {
@@ -57,7 +57,7 @@ const Repos = () => {
   <div className='MainApp-pagi'>
       <div className="NavBar">
          <img src={GitLogo} alt="GitLogo" className='GitLogo'/>
-         <div className='Error-test'><Link to= "/">Home</Link></div>
+         <div className='Error-test'>ErrorBoundary Test</div>
          <div className='Contact'>Contact Page</div>
       </div>
 
@@ -101,12 +101,12 @@ const Repos = () => {
                    </div>
 
 
-                   <div className="views-pagi" key={user.id}>
+                   <div className="views-pagi">
                     
                        <button className="gitview-pagi" >
                             <a href= {user.html_url}> GITHUB</a>
                        </button>
-                       <Link to= "/Repos" > 
+                       <Link to= "/Repos" key={user.id}> 
                           <button className='repos-pagi'>EXPAND</button> 
                        </Link>
               
@@ -146,5 +146,22 @@ const Repos = () => {
     )
 }
 
-export default Repos;
+export default SeparationOfRepos;
 
+{/* <div className="pagination-div">
+{users.length && users.map(user => {
+    return (
+        <div className="pagination-style">
+        <p className="pagination" key={user.id}>
+         {user.full_name}
+         {user.repos_url}
+        </p>
+        </div>
+    );
+}
+                                     )}
+
+                                     <button className='previous'onClick={previousPage}>Previous</button>
+                            <button className="Next" onClick={nextPage}>Next Page</button>
+       
+</div>  */}

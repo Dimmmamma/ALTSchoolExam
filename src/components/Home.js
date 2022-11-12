@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link, useState, useEffect } from 'react';
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import '../style.css';
 import GitLogo from '../images/GitHub-Mark-Light-120px-plus.png';
-import Repos from './Repos';
 import ErrorBoundary from './ErrorBoundary';
+
 
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
   const [userName, setUserName] = useState ('');
   const [followers, setFollowers] = useState ('');
   const [following, setFollowing] = useState ('');
-  const [repositories, setRepositories] = useState ('');
+  // const [repositories, setRepositories] = useState ('');
 //   const [error, setError] = useState (null);
 
   useEffect(()=> {
@@ -28,29 +28,27 @@ function App() {
     setAvatar(avatar_url);
     setName(name);
     setUserName(login);
-    setRepositories(public_repos);
+    // setRepositories(public_repos);
     setFollowers(followers);
     setFollowing(following);
   }
 
   return (
+    <ErrorBoundary>
   <div className="App">
   
 
     <div className='MainApp'>
       <div className="NavBar">
         <img src={GitLogo} alt="GitLogo" className='GitLogo'/>
-        <div className='Error-test'>ErrorBoundary Test</div>
+        <div className='Error-test'><Link to= "/">Home</Link></div>
         <div className='Contact'>Contact Page</div>
       </div>
 
       <div className="main">
-		    {/* <div className="mail"> */}
-			    {/* <div className="cover"> </div> */}
 			    <div className="image"> 
             <div className='gitAvatar'>
               <div className='parent-image'>
-              {/* <img src={GitLogo} alt="GitLogo" className='bg-logo'/>  */}
               <img src={avatar} alt="Git Avatar" className='avatar'/>
               </div>
               <h1 className='gitName'>{name}</h1>
@@ -58,7 +56,7 @@ function App() {
               <p className='para1'> "...@{userName} is a Frontend Developer curious about the intersection of Tech and Pharmacology given her background as a Pharmacology major." 
               </p>
               
-              <button className='repos'>VIEW REPOSITORIES</button>
+              <Link to= "/Repos"> <button className='repos'>VIEW REPOSITORIES</button> </Link>
               
               {/* <p className='gitProfileLink'>Follow me @ <a href='https://github.com/Dimmmamma'>{userName}</a></p> */}
             </div> 
@@ -72,11 +70,11 @@ function App() {
                  <p className='BottomFollowing'>following</p>
                 </div>
             </div>         
-          {/* </div> */}
 		    </div>
 	    </div>
     </div>
  </div>
+ </ErrorBoundary>
   );
 }
 
